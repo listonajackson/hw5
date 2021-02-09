@@ -65,9 +65,26 @@ function renderRides(ridesArray) {
       `)
     }
   }
-}
-
+} 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
+})
+
+let allRidesButton = document.querySelector('#all-filter')
+allRidesButton.addEventListener('click', async function(event){
+  event.preventDefault()
+  console.log('button clicked')
+
+  let url = 'https://kiei451.com/api/rides.json'
+  let response = await fetch(url)
+  let json = await response.json()
+  console.log(json)
+
+  let purpleButton = document.querySelector('#noober-purple-filter')
+  purpleButton.addEventListener('click', async function(event){
+    event.preventDefault()
+    console.log('purple button clicked')
+  })
+
 })
 
